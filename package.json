@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vue": "^4.0.8",
+    "@fontsource/barlow-semi-condensed": "^5.0.18",
+    "@fontsource/koulen": "^5.0.18",
     "astro": "^4.3.4",
     "tailwindcss": "^3.4.1",
     "vue": "^3.4.15"
