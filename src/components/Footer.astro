@@ -1,0 +1,47 @@
+---
+import ButtonPrimary from "./ButtonPrimary.astro";
+
+
+let currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#242424] text-white">
+  <div class="p-[2rem] flex flex-col gap-4 container mx-auto">
+    <div>
+      <img
+        class="w-1/2 max-w-[216px] mb-2"
+        src="/images/logo-inverted.svg"
+        alt="Cools inverted logo"
+      />
+      <p class="text-white w-5/6">
+        Cools is a bunch of useful and fun tools that you can use for your
+        purposes
+      </p>
+    </div>
+
+    <div class="flex flex-col">
+      <h2 class="text-3xl text-left mb-3">FEEL FREE to share your feedback</h2>
+
+      <form class="flex flex-col gap-3">
+        <input
+          class="p-2 rounded-md"
+          type="text"
+          placeholder="Enter Your Name"
+        />
+        <input class="p-2 rounded-md" type="text" placeholder="E-mail" />
+        <textarea
+          class="text-black p-2 rounded-md"
+          placeholder="Write your ideas here..."
+          name=""
+          id=""
+          cols="30"
+          rows="5"></textarea>
+          <ButtonPrimary url="#" btnText='Send feedback' btnColor="#EA985D" textColor="white"/>
+      </form>
+    </div>
+  </div>
+
+  <div class="flex justify-center items-center text-[#242424] bg-[#A8EB53]">
+    <h2 class="py-2">{currentYear}, Bogdan Bulakh</h2>
+  </div>
+</footer>
