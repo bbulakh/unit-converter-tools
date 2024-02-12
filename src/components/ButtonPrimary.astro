@@ -1,0 +1,23 @@
+---
+interface Props {
+  url: string;
+  btnColor: String;
+  textColor: String;
+  btnText: String;
+}
+
+const { url, btnColor, textColor, btnText } = Astro.props;
+---
+
+<a
+  href={url}
+  class="w-full py-3 text-center text-xl rounded-md"
+  style={`background-color: ${btnColor}; color: ${textColor};`}
+  >{btnText}
+</a>
+
+<style scoped>
+  a {
+    font-family: Koulen;
+  }
+</style>
