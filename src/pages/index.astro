@@ -10,20 +10,24 @@ import Footer from "../components/Footer.astro";
 <Layout title="COOLS">
   <main>
     <NavBar />
-    <div class="max-w-[1200px] md:flex md:flex-col md:justify-center mx-auto relative px-[2rem] overflow-hidden mb-10 md:mb-20">
+    <div
+      class="max-w-[1000px] md:flex md:flex-col md:justify-center mx-auto relative px-[2rem] overflow-hidden mb-10 md:mb-20"
+    >
       <a href="/index/">
         <img
-          class="w-[280px] md:w-[400px] right-0 top-[25px] z-[-1] absolute opacity-75"
+          class="w-[280px] md:w-[400px] right-0 top-[25px] md:top-[10px] z-[-1] absolute opacity-75"
           src="/images/bg-doodle.svg"
           alt="Background doodle"
         />
       </a>
       <h1 class="text-8xl mb-1 text-[#242424]">Cools</h1>
-      <h3 class="mb-5 max-w-[420px] md:mb-10 md:text-4xl text-xl text-[#a1a1a1]">
+      <h3
+        class="mb-5 max-w-[420px] md:mb-10 md:text-4xl text-xl text-[#a1a1a1]"
+      >
         Collection of useful unit tools that you can use to convert everything
         you need
       </h3>
-      <div class="w-full flex flex-col md:flex-row md:w-1/2 gap-3">
+      <div class="w-full flex flex-col sm:flex-row md:w-1/2 md:pb-10 gap-3">
         <ButtonPrimary
           btnText="Explore"
           btnColor="#A8EB53"
@@ -53,13 +57,16 @@ import Footer from "../components/Footer.astro";
     </div>
     <section
       id="tools"
-      class="relative  mt-10 bg-[#F4EEDB] p-[2rem] overflow-hidden"
+      class="relative mt-10 bg-[#F4EEDB] py-[2rem] overflow-hidden"
     >
-      <div class="max-w-[1200px] mx-auto">
-        <h2 class="text-7xl mb-3 text-[#242424]">TOOLS</h2>
+    <img class="absolute z-[0] top-[50%] rotate-45 min-w-[800px]" src="images/tools-bg-doodle.svg" alt="Background doodle">
+      <div class="max-w-[1000px] px-[2rem] mx-auto">
+        <h2 class="text-8xl mb-5 text-[#242424]">TOOLS</h2>
       </div>
 
-      <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div
+        class="max-w-[1000px] px-[2rem] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+      >
         <ToolCard
           href="#"
           heading="Currency converter"
