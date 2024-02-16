@@ -1,0 +1,26 @@
+---
+interface Props {
+    currentPage: string;
+}
+const {currentPage} = Astro.props
+---
+
+
+<div>
+    <ol class="list-none flex items-center gap-2">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>/</li>
+        <li>
+            <a href="#">{currentPage}</a>
+        </li>
+    </ol>
+</div>
+
+<style scoped>
+    li a {
+        font-family: Barlow Semi Condensed;
+    }
+
+</style>
