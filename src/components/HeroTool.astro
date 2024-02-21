@@ -8,10 +8,10 @@ const { toolName, toolInfo } = Astro.props;
 import Breadcrumbs from "./Breadcrumbs.astro";
 ---
 
-<div class="p-[2rem] bg-[#F4EEDB]">
+<div class="px-[2rem] bg-[#F4EEDB]">
   <div class="lg:px-[2rem] max-w-[1000px] mx-auto">
       <div class="py-[2rem]">
-        <h1 class="text-5xl">{toolName}</h1>
+        <h1 class="text-5xl mb-3">{toolName}</h1>
         <p class="text-xl">{toolInfo}</p>
       </div>
       <Breadcrumbs currentPage="Currency Converter"/>
