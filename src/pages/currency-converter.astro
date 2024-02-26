@@ -1,0 +1,14 @@
+---
+import ToolLayout from "../layouts/ToolLayout.astro"
+import HeroTool from "../components/HeroTool.astro"
+import Converter from "../components/tools/Converter.vue"
+---
+
+<ToolLayout title="Currency Converter">
+    <HeroTool toolName="Currency Converter" toolInfo="Simple currency converter with Open Exchange Rate API"/>
+
+    <section>
+        <Converter client:load/>
+    </section>
+
+</ToolLayout>
