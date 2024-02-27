@@ -1,0 +1,14 @@
+---
+import ToolLayout from "../layouts/ToolLayout.astro"
+import HeroTool from "../components/HeroTool.astro"
+import Arabic2Roman from "../components/tools/ArabicToRoman.vue"
+---
+
+<ToolLayout title="Arabic To Roman Numerals">
+    <HeroTool toolName="Arabic To Roman Numerals" toolInfo="Convert your dull 1999 to beautiful MCMXCIX"/>
+
+    <section>
+        <Arabic2Roman client:load/>
+    </section>
+
+</ToolLayout>
