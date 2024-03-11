@@ -1,6 +1,7 @@
 ---
 import ToolLayout from "../layouts/ToolLayout.astro";
 import HeroTool from "../components/HeroTool.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import DecimalBinary from "../components/tools/DecimalBinary.vue";
 ---
 
@@ -8,7 +9,8 @@ import DecimalBinary from "../components/tools/DecimalBinary.vue";
   <HeroTool
     toolName="Decimal to Binary"
     toolInfo="Tool that helps you to convert your decimal number to binary and vise versa"
-  />
+    
+  ><Fragment><Breadcrumbs currentPage="Decimal To Binary" /></Fragment></HeroTool>
 
   <section>
     <DecimalBinary client:load />
