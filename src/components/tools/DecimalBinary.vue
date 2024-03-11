@@ -1,26 +1,21 @@
 <script>
-import { ref } from "vue";
-
 export default {
-  setup() {
-    const decimalNumber = ref("");
-    const binaryNumber = ref("");
-
-    function convertToBinary() {
-      if (!decimalNumber.value) {
-        binaryNumber.value = "Please type something";
+ data() {
+    return {
+      decimalNumber: '',
+      binaryNumber: ''
+    };
+ },
+ methods: {
+    convertToBinary() {
+      if (!this.decimalNumber) {
+        this.binaryNumber = "Please type something";
       } else {
-        binaryNumber.value = parseInt(decimalNumber.value, 10).toString(2);
-        decimalNumber.value = "";
+        this.binaryNumber = parseInt(this.decimalNumber, 10).toString(2);
+        this.decimalNumber = '';
       }
     }
-
-    return {
-      decimalNumber,
-      binaryNumber,
-      convertToBinary,
-    };
-  },
+ }
 };
 </script>
 
@@ -38,15 +33,25 @@ export default {
         Binary to Decimal
       </button>
     </div>
-    <input
-      class="p-2 border rounded-md h-[50px] w-full outline-accent"
-      type="number"
-      v-model="decimalNumber"
-      placeholder="Select a type of coversion"
-    />
-    <div>
-      <p class="text-xl">{{ binaryNumber }}</p>
+
+    <div class="md:flex gap-4">
+      <textarea
+        v-model="decimalNumber"
+        class="p-2 border md:text-xl rounded-md h-[100px] md:h-[300px] w-full outline-accent"
+        placeholder="Type your numbers here"
+        cols="30"
+        rows="50"
+      ></textarea>
+
+      <textarea
+        placeholder="Your result would be here"
+        class="p-2 border md:text-xl rounded-md h-[100px] md:h-[300px] w-full outline-accent"
+        cols="30"
+        rows="50"
+        >{{ binaryNumber }}</textarea
+      >
     </div>
+
     <button
       class="p-2 text-xl my-3 bg-primary w-full rounded-md"
       @click="convertToBinary"
@@ -54,6 +59,8 @@ export default {
       Convert
     </button>
   </div>
+
+
 </template>
 
 <style>
