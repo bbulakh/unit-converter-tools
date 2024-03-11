@@ -47,7 +47,7 @@ export default {
     <div class="md:flex gap-4">
       <textarea
         v-model="number"
-        class="p-2 border rounded-md h-[100px] md:h-[300px] w-full outline-accent"
+        class="p-2 border md:text-xl rounded-md h-[100px] md:h-[300px] w-full outline-accent"
         placeholder="Type your numbers here"
         cols="30"
         rows="50"
@@ -55,7 +55,7 @@ export default {
 
       <textarea
         placeholder="Your result would be here"
-        class="p-2 border rounded-md h-[100px] md:h-[300px] w-full outline-accent"
+        class="p-2 border md:text-xl rounded-md h-[100px] md:h-[300px] w-full outline-accent"
         cols="30"
         rows="50"
         >{{ romanNumber }}</textarea
