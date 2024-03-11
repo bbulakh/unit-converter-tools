@@ -26,6 +26,11 @@ export default {
       let result = "";
 
       romanValues.forEach((value) => {
+        if (this.number > 3999) {
+          result =
+            "Your number is higher than 3999 or contains letters. Please use numbers 1 - 3999";
+          return;
+        }
         while (this.number >= value[1]) {
           result += value[0];
           this.number -= value[1];
@@ -39,15 +44,24 @@ export default {
 
 <template>
   <div class="p-[2rem] flex flex-col gap-3 max-w-[1000px] mx-auto">
-    <input
-      class="p-2 border rounded-md h-[50px] w-full outline-accent"
-      type="number"
-      v-model="number"
-      placeholder="Select a type of coversion"
-    />
-    <div>
-      <p class="text-xl">{{ romanNumber }}</p>
+    <div class="md:flex gap-4">
+      <textarea
+        v-model="number"
+        class="p-2 border rounded-md h-[100px] md:h-[300px] w-full outline-accent"
+        placeholder="Type your numbers here"
+        cols="30"
+        rows="50"
+      ></textarea>
+
+      <textarea
+        placeholder="Your result would be here"
+        class="p-2 border rounded-md h-[100px] md:h-[300px] w-full outline-accent"
+        cols="30"
+        rows="50"
+        >{{ romanNumber }}</textarea
+      >
     </div>
+
     <button
       class="p-2 text-xl my-3 bg-primary w-full rounded-md"
       @click="convert"
