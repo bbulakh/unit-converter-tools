@@ -62,7 +62,7 @@ const toCurrency = ref("RUB");
         </select>
       </label>
 
-      <div class="flex gap-3 w-full bg-[#f8f8f8] px-[2rem] py-3">
+      <div class="flex gap-3 w-full px-[2rem] py-3">
         <button
           class="p-2 text-xl my-3 bg-primary w-full rounded-md"
           @click=""
