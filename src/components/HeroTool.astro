@@ -7,11 +7,11 @@ interface Props {
 const { toolName, toolInfo } = Astro.props;
 ---
 
-<div class="bg-[#F4EEDB] md:min-h-[300px]">
-  <div class="max-w-[1000px] mx-auto">
-      <div class="p-[2rem] mx-auto">
+<div class="bg-[#F4EEDB] md:flex md:items-center md:min-h-[300px]">
+  <div class="max-w-[1000px] w-full mx-auto">
+      <div class="p-[2rem]  mx-auto">
         <h1 class="text-5xl md:text-8xl mb-3">{toolName}</h1>
-        <p class="text-xl">{toolInfo}</p>
+        <p class="text-xl md:w-4/5">{toolInfo}</p>
       </div>
       <div class="max-w-[1000px] px-[2rem]"><slot/></div>
   </div>
