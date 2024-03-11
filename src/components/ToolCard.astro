@@ -6,10 +6,10 @@ interface Props {
   icon?: string;
 }
 
-const { heading, description, href, icon } = Astro.props;
+const { heading, description, href } = Astro.props;
 ---
 
-<a href={href} class="relative flex flex-col bg-white p-[20px] rounded-md">
+<a href={href} class="relative flex flex-col bg-white p-[20px] min-h-[224px] rounded-md">
   <div
     class="absolute opacity-0 hover:opacity-100 transition-all flex justify-center items-center top-0 right-0 bottom-0 left-0 rounded-md bg-[#FFAC70]"
   >
@@ -23,6 +23,6 @@ const { heading, description, href, icon } = Astro.props;
 
   <div class="flex flex-col gap-2">
     <h2 class="text-[25px]">{heading}</h2>
-    <p class="text-[19px]">{description}</p>
+    <p class="text-[19px] break-words">{description}</p>
   </div>
 </a>
