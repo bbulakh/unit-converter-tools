@@ -1,0 +1,28 @@
+---
+interface Props {
+  heading: string;
+  description: string;
+  href: string;
+  icon?: string;
+}
+
+const { heading, description, href } = Astro.props;
+---
+
+<a href={href} class="relative flex gap-4 border bg-white p-[20px] rounded-md">
+  <div
+    class="absolute opacity-0 hover:opacity-100 transition-all flex justify-center items-center top-0 right-0 bottom-0 left-0 rounded-md bg-[#FFAC70]"
+  >
+    <h2 class="text-5xl text-[#8D3B00] font-[Koulen] font-bold">Open tool</h2>
+  </div>
+  <div class="flex justify-between mb-4">
+    <i class="w-[65px]">
+      <slot />
+    </i>
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <h2 class="text-[25px]">{heading}</h2>
+    <p class="text-[19px] break-words">{description}</p>
+  </div>
+</a>
