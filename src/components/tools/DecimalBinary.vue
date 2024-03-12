@@ -1,70 +1,78 @@
 <script>
 export default {
- data() {
+  data() {
     return {
-      decimalNumber: '',
-      binaryNumber: ''
+      decimalNumber: "",
+      binaryNumber: "",
+      activeInput: ""
     };
- },
- methods: {
+  },
+  methods: {
     convertToBinary() {
-      if (!this.decimalNumber) {
-        this.binaryNumber = "Please type something";
-      } else {
+      if (this.activeInput === 'decimal') {
         this.binaryNumber = parseInt(this.decimalNumber, 10).toString(2);
-        this.decimalNumber = '';
       }
-    }
- }
+    },
+
+    convertToDecimal() {
+      if (this.activeInput === 'binary') {
+        this.decimalNumber = parseInt(this.binaryNumber, 2).toString(10);
+      }
+    },
+  },
 };
 </script>
 
 <template>
   <div class="p-[2rem] flex flex-col gap-3 max-w-[1000px] mx-auto">
-    <div class="flex gap-2">
-      <button
-        class="border p-2 rounded-md active:border-accent hover:border-accent"
-      >
-        Decimal to Binary
-      </button>
-      <button
-        class="border p-2 rounded-md active:border-accent hover:border-accent"
-      >
-        Binary to Decimal
-      </button>
+    <div class="rounded-md bg-[#53c0eb3b]">
+      <div class="p-4 flex gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+
+        <p>Start typing in one of these inputs to see the result</p>
+      </div>
     </div>
 
     <div class="md:flex gap-4">
       <textarea
         v-model="decimalNumber"
         class="p-2 border md:text-xl rounded-md h-[100px] md:h-[300px] w-full outline-accent"
-        placeholder="Type your numbers here"
+        placeholder="Decimal Numbers"
         cols="30"
         rows="50"
-      ></textarea>
+        @input="activeInput = 'decimal'; convertToBinary()"
+      >{{ decimalNumber }}</textarea>
 
       <textarea
-        placeholder="Your result would be here"
+        v-model="binaryNumber"
+        placeholder="Binary Numbers"
         class="p-2 border md:text-xl rounded-md h-[100px] md:h-[300px] w-full outline-accent"
         cols="30"
         rows="50"
+        @input="activeInput = 'binary'; convertToDecimal()"
         >{{ binaryNumber }}</textarea
       >
     </div>
 
-    <button
-      class="p-2 text-xl my-3 bg-primary w-full rounded-md"
-      @click="convertToBinary"
-    >
-      Convert
-    </button>
+   
   </div>
-
-
 </template>
 
 <style>
 button {
-  font-family: Koulen;
+  font-family: Koulen, serif;
 }
 </style>
