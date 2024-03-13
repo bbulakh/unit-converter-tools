@@ -1,0 +1,76 @@
+---
+import ToolLayout from "../layouts/ToolLayout.astro";
+import HeroTool from "../components/HeroTool.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Length from "../components/tools/Length.vue";
+import ToolCardHorizontal from "../components/ToolCardHorizontal.astro";
+---
+
+<ToolLayout title="Length Converter">
+  <HeroTool
+    toolName="Length Converter"
+    toolInfo="Convert your meters to miles, kilometers and more"
+  >
+    <Fragment><Breadcrumbs currentPage="Length Converter" /></Fragment>
+  </HeroTool>
+
+  <section>
+    <Length client:load />
+  </section>
+
+  <section class="p-[2rem] max-w-[1000px] mx-auto">
+    <h2 class="text-5xl mb-5">Try other <br /> tools</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <ToolCardHorizontal
+        href="/"
+        heading="Arabic to Roman"
+        description="With this tool you can convert your dull 1999 to beautiful MCMXCIX"
+      >
+        <Fragment>
+          <img src="/images/arabic-icon.svg" alt="Currency Icon" />
+        </Fragment>
+      </ToolCardHorizontal>
+
+      <ToolCardHorizontal
+        href="/"
+        heading="Arabic to Roman"
+        description="With this tool you can convert your dull 1999 to beautiful MCMXCIX"
+      >
+        <Fragment>
+          <img src="/images/arabic-icon.svg" alt="Currency Icon" />
+        </Fragment>
+      </ToolCardHorizontal>
+
+      <ToolCardHorizontal
+        href="/"
+        heading="Arabic to Roman"
+        description="With this tool you can convert your dull 1999 to beautiful MCMXCIX"
+      >
+        <Fragment>
+          <img src="/images/arabic-icon.svg" alt="Currency Icon" />
+        </Fragment>
+      </ToolCardHorizontal>
+
+      <ToolCardHorizontal
+        href="/"
+        heading="Arabic to Roman"
+        description="With this tool you can convert your dull 1999 to beautiful MCMXCIX"
+      >
+        <Fragment>
+          <img src="/images/arabic-icon.svg" alt="Currency Icon" />
+        </Fragment>
+      </ToolCardHorizontal>
+
+      <ToolCardHorizontal
+        href="/"
+        heading="Arabic to Roman"
+        description="With this tool you can convert your dull 1999 to beautiful MCMXCIX"
+      >
+        <Fragment>
+          <img src="/images/arabic-icon.svg" alt="Currency Icon" />
+        </Fragment>
+      </ToolCardHorizontal>
+    </div>
+  </section>
+</ToolLayout>
