@@ -4,19 +4,25 @@ export default {
     return {
       decimalNumber: "",
       binaryNumber: "",
-      activeInput: ""
+      activeInput: "",
     };
   },
   methods: {
     convertToBinary() {
-      if (this.activeInput === 'decimal') {
+      if (this.activeInput === "decimal" && this.decimalNumber !== "") {
         this.binaryNumber = parseInt(this.decimalNumber, 10).toString(2);
+      } else {
+        this.binaryNumber = "";
       }
     },
 
     convertToDecimal() {
-      if (this.activeInput === 'binary') {
+      if (/[2-9]/.test(this.binaryNumber)) {
+        this.decimalNumber = "Incorrect binary number";
+      } else if (this.activeInput === "binary" && this.binaryNumber !== "") {
         this.decimalNumber = parseInt(this.binaryNumber, 2).toString(10);
+      } else {
+        this.decimalNumber = "";
       }
     },
   },
@@ -53,8 +59,12 @@ export default {
         placeholder="Decimal Numbers"
         cols="30"
         rows="50"
-        @input="activeInput = 'decimal'; convertToBinary()"
-      >{{ decimalNumber }}</textarea>
+        @input="
+          activeInput = 'decimal';
+          convertToBinary();
+        "
+        >{{ decimalNumber }}</textarea
+      >
 
       <textarea
         v-model="binaryNumber"
@@ -62,12 +72,13 @@ export default {
         class="p-2 border md:text-xl rounded-md h-[100px] md:h-[300px] w-full outline-accent"
         cols="30"
         rows="50"
-        @input="activeInput = 'binary'; convertToDecimal()"
+        @input="
+          activeInput = 'binary';
+          convertToDecimal();
+        "
         >{{ binaryNumber }}</textarea
       >
     </div>
-
-   
   </div>
 </template>
 
