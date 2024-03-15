@@ -98,6 +98,6 @@ export default {
 <style>
 button,
 strong {
-  font-family: Koulen;
+  font-family: Koulen, serif;
 }
 </style>
