@@ -4,21 +4,27 @@ import ButtonWithIcon from "./ButtonWithIcon.astro";
 ---
 
 <div
-  class="max-w-[1000px] md:flex md:flex-col md:justify-center mx-auto relative px-[2rem] overflow-hidden my-10 md:mb-20"
+  class="max-w-[1000px] md:flex md:flex-col md:justify-center mx-auto relative px-[2rem] my-10 md:mb-20"
 >
-  <a href="/index.astro/">
-    <img
-      class="w-[280px] md:w-[400px] right-0 lg:-right-5 top-[25px] md:top-[10px] z-[-1] absolute opacity-75"
-      src="/images/bg-doodle.svg"
-      alt="Background doodle"
-    />
-  </a>
+  <img
+    class="w-[280px] md:w-[400px] right-0 lg:-right-5 top-[25px] md:top-[10px] z-[-1] absolute opacity-75"
+    src="/images/bg-doodle.svg"
+    alt="Background doodle"
+  />
+
+  <img
+    width="300px"
+    class="absolute sm:w-[330px] lg:w-[360px] hidden md:block right-0 top-[20px]"
+    src="/images/hero-image.svg"
+    alt="Hand with phone image"
+  />
+
   <h1 class="text-8xl mb-1 text-typodark">Cools</h1>
   <h3 class="mb-5 max-w-[420px] md:mb-10 md:text-4xl text-xl text-[#a1a1a1]">
     Collection of useful unit tools that you can use to convert everything you
     need
   </h3>
-  <div class="w-full flex flex-col sm:flex-row md:w-1/2 md:pb-10 gap-3">
+  <div class="w-full flex flex-col sm:flex-row sm:w-1/2 md:pb-10 gap-3">
     <ButtonPrimary
       btnText="Explore"
       btnColor="#A8EB53"
