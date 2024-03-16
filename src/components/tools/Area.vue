@@ -10,7 +10,34 @@ export default {
     };
   },
   methods: {
-    
+    convertToOtherUnits(field) {
+      if (field === "squareMeters") {
+        this.squareKilometers = this.squareMeters / 1000000;
+        this.squareMiles = this.squareMeters * 0.0000003861;
+        this.hectares = this.squareMeters / 10000;
+        this.acres = this.squareMeters / 4046.85642;
+      } else if (field === "squareKilometers") {
+        this.squareMeters = this.squareKilometers * 1000000;
+        this.squareMiles = this.squareKilometers * 2.59;
+        this.hectares = this.squareKilometers * 100;
+        this.acres = this.squareKilometers * 247.11;
+      } else if (field === "squareMiles") {
+        this.squareKilometers = this.squareMiles * 2.59;
+        this.squareMeters = this.squareMiles * 2589988;
+        this.hectares = this.squareMiles * 258.99881;
+        this.acres = this.squareMiles * 640;
+      } else if (field === "hectares") {
+        this.squareKilometers = this.hectares * 0.01;
+        this.squareMeters = this.hectares * 10000;
+        this.squareMiles = this.hectares * 0.0038610178489439854;
+        this.acres = this.hectares * 2.47105;
+      } else if (field === "acres") {
+        this.squareKilometers = this.acres * 0.004047;
+        this.squareMeters = this.acres * 4046.85642;
+        this.squareMiles = this.acres * 0.0038610178489439854;
+        this.hectares = this.acres * 2.47105;
+      }
+    },
   },
 };
 </script>
@@ -77,9 +104,8 @@ export default {
           class="p-2 border rounded-md h-[50px]"
           type="number"
           v-model="acres"
-          @input="convertToOtherUnits('miles')"
+          @input="convertToOtherUnits('acres')"
       /></label>
-
     </div>
   </div>
 </template>
