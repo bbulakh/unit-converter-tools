@@ -12,15 +12,30 @@ export default {
   methods: {
     convertToOtherUnits(field) {
       if (field === "ms") {
-        
+        this.kmh = (this.ms * 3.6);
+        this.mih = (this.ms * 2.23694);
+        this.knot = (this.ms * 1.94384);
+        this.mach = (this.ms / 343);
       } else if (field === "kmh") {
-        
+        this.ms = (this.kmh / 3.6);
+        this.mih = (this.kmh / 1.60934);
+        this.knot = (this.kmh / 1.852);
+        this.mach = (this.kmh / 1225.044);
       } else if (field === "mih") {
-        
+        this.ms = (this.mih * 0.44704);
+        this.kmh = (this.mih * 1.60934);
+        this.knot = (this.mih * 0.868976);
+        this.mach = (this.mih / 761.207);
       } else if (field === "knot") {
-       
+        this.ms = (this.knot * 0.514444);
+        this.kmh = (this.knot * 1.852);
+        this.mih = (this.knot * 1.150779);
+        this.mach = (this.knot / 661.4708);
       } else if (field === "mach") {
-        
+        this.ms = (this.mach * 343);
+        this.kmh = (this.mach * 1225.044);
+        this.mih = (this.mach * 761.207);
+        this.knot = (this.mach * 661.4708);
       }
     },
   },
