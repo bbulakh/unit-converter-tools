@@ -71,9 +71,9 @@
           Convert
         </button>
 
-        <div class="">
+        <div>
           <button
-            class="relative w-[50px] h-[50px] flex items-center justify-center bg-accent rounded-md"
+            class="w-[50px] h-[50px] flex items-center justify-center bg-accent rounded-md"
             @click.prevent="toggleDropdown"
           >
             <svg
@@ -95,19 +95,21 @@
               </g>
             </svg>
           </button>
-          <ul
-            class="bg-white *:border-b border max-w-[1000px] mx-auto rounded *:p-2 absolute z-10 "
-            :class="{ hidden: !showDropdown }"
-          >
-            <li
-              class="last-of-type:border-none"
-              v-for="(conversion, index) in historyStorage"
-              :key="index"
+          <div class="relative">
+            <ul
+              class="bg-white *:border-b border max-w-[1000px] min-w-[200px] mx-auto rounded *:p-2 absolute z-10 right-0"
+              :class="{ hidden: !showDropdown }"
             >
-              {{ conversion.amount }} {{ conversion.fromCurrency }} =
-              {{ conversion.convertedAmount }} {{ conversion.toCurrency }}
-            </li>
-          </ul>
+              <li
+                class="last-of-type:border-none"
+                v-for="(conversion, index) in historyStorage"
+                :key="index"
+              >
+                {{ conversion.amount }} {{ conversion.fromCurrency }} =
+                {{ conversion.convertedAmount }} {{ conversion.toCurrency }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
